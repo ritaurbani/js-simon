@@ -9,20 +9,31 @@
 
 </head>
 <body>
-    <form id="my-form" class="d-none">
+
+    <div id="pageNumbers">
+
+    </div>
+<!--     
+        <ul id="list">
+        </ul>  -->
+        <button id="add-btn">Aggiungi</button>
+       
+
+
+    <div>
+        <div id="inputNumber" class="d-none mt-5">
+            <input type="number">
+            <input type="number">
+            <input type="number">
+            <input type="number">
+            <input type="number">
+        </div>
         <div class="mt-5">
-            <input type="number">
-            <input type="number">
-            <input type="number">
-            <input type="number">
-            <input type="number">
-        </form>
-        <div class="mt-5">
-            <button id="btn-submit" type="submit" class="btn btn-primary">Submit</button>
+            <button id="btn-timer" class="btn btn-primary">Start Timer</button>
         </div>
     </div>
     <!-- SetTimeOut -->
-    <button id="btn-timer" type="click"></button>
+    <button id="btn-check" class="mt-4">Check</button>
 
 
     <script src="./scrypt.js"></script>

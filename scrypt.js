@@ -1,44 +1,53 @@
-//Genero 5 random numbers e salvo in array
+//Al click del bottone Aggiungi Genero 5 random numbers e salvo in array
 
-let numbers = [];
+const addBtn = document.getElementById("add-btn");
+const pageNumbersElem = document.getElementById("pageNumbers");
+let numbers = [];  //scope piu grande
 
-for (let i=0; i<5; i++){
-    const randNum = Math.floor(Math.random()*100) + 1;
-    numbers.push(randNum);
-} console.log(numbers)
+addBtn.addEventListener("click", function () {
+    
+    for (let i = 0; i < 5; i++) {
+        const randNum = Math.floor(Math.random() * 100) + 1;
+        numbers.push(randNum);
+    }
+    console.log(`numbers:${numbers}`)
 
-//Imposto timer di 30 sec dopo i quali i numeri disappear
+    const pageNumbers = numbers.join(", ")
+    console.log(`pageNumbers:${pageNumbers}`)
 
-
-
-//dopo i 30 sec compaiono input -(impostati in d-none => d-block)
-const btnElem = document.getElementById("btn-timer");
-btnElem.addEventListener("click", function () {
-    setTimeout(function () {
-        inputNumber.classList.remove("d-none");
-    }, 30000);
+    pageNumbersElem.innerHTML = pageNumbers
 })
 
 
-//inserire numeri, premo bottone
+// al click parte countdown di 30 sec, spariscono numeri e compaiono input
 
+const btnElem = document.getElementById("btn-timer");
+const inputNumberElem = document.getElementById("inputNumber")
+
+btnElem.addEventListener("click", function () {
+    setTimeout(function () {
+        pageNumbersElem.classList.add("d-none");
+        inputNumberElem.classList.remove("d-none");
+    }, 3 * 1000);
+})
+
+//inserire numeri, premo bottone
 
 //prelevare valori dell'input e confrontarli con array di numbers salvata all'inizio
 //(.querySelectAll)
 
-const formElement = document.getElementById("my-form"); 
-const btnSubmitElem = document.getElementById("btn-submit");
+const btnCheckElem = document.getElementById("btn-check");
 
-const allInputs = document.querySelectorAll("input"); // array
-console.log(allInputs);
+const allInputs = document.querySelectorAll("input"); // array gia creata
+// console.log(allInputs);
 
-formElement.addEventListener("submit", function (event) {
-for (let i = 0; i < allInputs.length; i++) {
-    const curInput = allInputs[i];
-    console.log(curInput.value);
-}
+btnCheckElem.addEventListener("click", function (event) {
+    for (let i = 0; i < allInputs.length; i++) {
+        const curInput = allInputs[i];
+        console.log(curInput.value); //value che e'una property su input and select 
+    } 
+})
 
-});
-
+// console.log(`allInputs: ${allInputs}`)
 
 //Stampa alert 
