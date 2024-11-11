@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,34 +9,32 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 
 </head>
+
 <body>
 
-    <div id="pageNumbers">
+    <div id="pageNumbers"></div>
 
+    <!-- <div class="vh-100 d-flex flex-column justify-content-center align-items-center">
+        <h1 id="pageNumbers" class=""> </h1>
+    </div> -->
+
+    <button id="add-btn" class="mt-5 btn btn-primary ">Aggiungi</button>
+
+    <div id="inputNumber" class="d-none mt-5">
+        <input type="number">
+        <input type="number">
+        <input type="number">
+        <input type="number">
+        <input type="number">
     </div>
-<!--     
-        <ul id="list">
-        </ul>  -->
-        <button id="add-btn">Aggiungi</button>
-       
-
-
-    <div>
-        <div id="inputNumber" class="d-none mt-5">
-            <input type="number">
-            <input type="number">
-            <input type="number">
-            <input type="number">
-            <input type="number">
-        </div>
-        <div class="mt-5">
-            <button id="btn-timer" class="btn btn-primary">Start Timer</button>
-        </div>
+    <div class="mt-5 mx-auto">
+        <button id="btn-timer" class="btn btn-primary">start timer</button>
     </div>
+    
     <!-- SetTimeOut -->
-    <button id="btn-check" class="mt-4">Check</button>
-
+    <button id="btn-check" class="mt-5 btn btn-primary">Check</button>
 
     <script src="./scrypt.js"></script>
 </body>
+
 </html>
